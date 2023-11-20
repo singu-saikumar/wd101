@@ -2,6 +2,22 @@
 
 let userForm=document.getElementById("userForm");
 
+const dobInput = document.getElementById('dob');
+
+dobInput.addEventListener('input', (event) => {
+    const dob = new Date(event.target.value);
+    const now = new Date();
+    const age = now.getFullYear() - dob.getFullYear();
+
+    if ((age < 18) || age > 55) {
+        dobInput.setCustomValidity('Please enter a valid date of birth between ages 18 and 55.');
+    }
+    else{
+        dobInput.setCustomValidity('');
+    }
+});
+
+
 let retrieve = () => {
     let enter = localStorage.getItem("userEntries");
     if (enter) {
