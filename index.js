@@ -1,5 +1,4 @@
 
-
 let userForm=document.getElementById("userForm");
 
 const dobInput = document.getElementById('dob');
